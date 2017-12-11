@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+    tools:context="com.example.santi.autos.actividades.AddCarActivity">
+
+    <EditText
+        android:id="@+id/etPlate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/plate"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/etBrand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/brand"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/etColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/color"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/selectDate"
+        android:inputType="date"
+        android:clickable="true"
+        android:maxLines="1" />
+
+    <CheckBox
+        android:id="@+id/cbState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/active" />
+
+    <Button
+        android:id="@+id/bAddCar"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="221dp"
+        android:shadowColor="#ffffff"
+        android:layout_height="wrap_content"
+        android:onClick="addCarOnClick"
+        android:text="@string/add_car"
+        android:layout_gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
+</LinearLayout>
