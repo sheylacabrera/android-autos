@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".actividades.LoginActivity"></activity>
-        <activity android:name=".actividades.ShowCarsActivity" />
+        <activity android:name=".actividades.ShowProductsActivity" />
         <activity android:name=".actividades.AddCarActivity" />
 
     </application>

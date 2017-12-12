@@ -11,17 +11,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.santi.autos.R;
-import com.example.santi.autos.controladores.AdministradorLogin;
-import com.example.santi.autos.controladores.AdministradorLoginImpl;
 import com.example.santi.autos.controladores.AdministradorVentas;
 import com.example.santi.autos.controladores.AdministradorVentasImpl;
-import com.example.santi.autos.entidades.Vehiculo;
+import com.example.santi.autos.entidades.Products;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.logging.Logger;
 
 public class AddCarActivity extends AppCompatActivity {
 
@@ -31,14 +28,14 @@ public class AddCarActivity extends AppCompatActivity {
     private EditText etDate;
     DatePickerDialog datePickerDialog;
     private CheckBox cbState;
-    private Vehiculo vehiculo;
+    private Products products;
 
     private AdministradorVentas administradorVentas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_car);
+        /*setContentView(R.layout.activity_add_car);
 
         administradorVentas = AdministradorVentasImpl.getAdministradorVentas();
         etPlate = (EditText) findViewById(R.id.etPlate);
@@ -73,7 +70,7 @@ public class AddCarActivity extends AppCompatActivity {
         });
 
 
-        vehiculo = new Vehiculo();
+        products = new Products("PRODUCTO 3", 9, 9.8);
     }
 
     public void addCarOnClick(View v) {
@@ -104,11 +101,11 @@ public class AddCarActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "El color no es una palabra.", Toast.LENGTH_LONG).show();
             flag = false;
         }
-        Vehiculo vehiculo = new Vehiculo(plate, brand, color, date, state);
+        Products products = new Products(plate, brand, color, date, state);
         administradorVentas = AdministradorVentasImpl.getAdministradorVentas();
         try {
             if (flag) {
-                administradorVentas.crear(vehiculo);
+                administradorVentas.crear(products);
             } else {
                 throw new RuntimeException();
             }
@@ -117,10 +114,10 @@ public class AddCarActivity extends AppCompatActivity {
             flag = false;
         }
         if (flag) {
-            Intent intent = new Intent(AddCarActivity.this, ShowCarsActivity.class);
+            Intent intent = new Intent(AddCarActivity.this, ShowProductsActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivity(intent);
             finish();
-        }
+        }*/
     }
 }

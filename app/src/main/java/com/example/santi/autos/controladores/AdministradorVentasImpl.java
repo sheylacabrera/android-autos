@@ -1,24 +1,31 @@
 package com.example.santi.autos.controladores;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import com.example.santi.autos.entidades.Vehiculo;
+
+import com.example.santi.autos.R;
+import com.example.santi.autos.entidades.Products;
 
 /**
  * Implementa el patron de diseño Singleton
  */
 public class AdministradorVentasImpl implements AdministradorVentas {
-    private List<Vehiculo> datos;
+    private List<Products> datos;
+    // references to our images
+    private int[] mThumbIds = {
+            R.drawable.imagen1, R.drawable.imagen2,
+            R.drawable.imagen3
+    };
     private static AdministradorVentas administradorVentas;
 
     /**
      * Constructor provado para no permitir crear objetos de esta clase
      */
     private AdministradorVentasImpl() {
-        datos = new ArrayList<>();
-        datos.add(new Vehiculo("PPJ0558", "NISSAN", "ROJO", new Date(), true));
-        datos.add(new Vehiculo("ABJ0333", "TOYOTA", "NEGRO", new Date(), true));
+        datos = new ArrayList<Products>();
+        datos.add(new Products("PRODUCTO 1", 5, 7));
+        datos.add(new Products("PRODUCTO 2",  8, 7.5));
+        datos.add(new Products("PRODUCTO 3", 9, 9.8));
     }
 
     /**
@@ -32,50 +39,33 @@ public class AdministradorVentasImpl implements AdministradorVentas {
         }
         return administradorVentas;
     }
-
+/*
     @Override
-    public void crear(Vehiculo obj) throws Exception {
+    public void crear(Products obj) throws Exception {
         if (datos.contains(obj)) throw new Exception("Vehículo ya existe");
         datos.add(obj);
     }
 
     @Override
-    public void modificar(Vehiculo obj) throws Exception {
+    public void modificar(Products obj) throws Exception {
         if (!datos.contains(obj)) throw new Exception("Vehículo no existe");
         datos.remove(obj);
         datos.add(obj);
     }
 
     @Override
-    public void eliminar(Vehiculo obj) throws Exception {
+    public void eliminar(Products obj) throws Exception {
         if (!datos.contains(obj)) throw new Exception("Vehículo no existe");
         datos.remove(obj);
+    }*/
+
+    @Override
+    public int[] listarImagen() throws Exception {
+        return mThumbIds;
     }
 
     @Override
-    public Vehiculo buscarPorPlaca(String placa) throws Exception {
-        Vehiculo v = null;
-        for (Vehiculo obj : datos) {
-            if (obj.getPlaca().equals(placa)) {
-                v = obj;
-                break;
-            }
-        }
-        return v;
-    }
-
-    @Override
-    public Vehiculo buscarPorCodigo(int codigo) throws Exception {
-        Vehiculo v = new Vehiculo();
-        v.setCodigo(codigo);
-        if (!datos.contains(v)) return null;
-
-        int idx = datos.indexOf(v);
-        return datos.get(idx);
-    }
-
-    @Override
-    public List<Vehiculo> listar() throws Exception {
+    public List<Products> listarDatos() throws Exception {
         return datos;
     }
 }
