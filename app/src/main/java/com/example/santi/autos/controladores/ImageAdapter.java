@@ -16,7 +16,7 @@ import com.example.santi.autos.entidades.Products;
 import java.util.List;
 
 /**
- * Created by Santi on 11/12/2017.
+ * Created by Sheyla on 11/12/2017.
  */
 
 public class ImageAdapter extends BaseAdapter {

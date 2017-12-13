@@ -37,7 +37,7 @@ public class ShowProductsActivity extends Activity {
         String value = ""; // or other values
         if(b != null)
             value = b.getString("ced");
-        wm.setText("BIENVENIDO " + value);
+        wm.setText("BIENVENIDO QUERIDO AMIGO  " + value + "A LA PASTELERIA ESMERALDITA");
         try {
             lv.setAdapter(new ImageAdapter(this, administradorVentas.listarDatos(), administradorVentas.listarImagen()));
         } catch (Exception e) {

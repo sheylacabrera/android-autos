@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="135dp" />
+        app:layout_constraintGuide_begin="127dp" />
 
     <TextView
         android:id="@+id/tvProducto"
@@ -51,15 +51,18 @@
 
     <TextView
         android:id="@+id/tRating"
-        android:layout_width="wrap_content"
+        android:layout_width="1dp"
         android:layout_height="23dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rbBarra" />
 
     <RatingBar
         android:id="@+id/rbBarra"
-        android:layout_width="167dp"
+        android:layout_width="189dp"
         android:layout_height="43dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
@@ -77,7 +80,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:contentDescription="Imagenes"
+        android:contentDescription="@string/imagenes"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
